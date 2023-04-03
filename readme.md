@@ -1,6 +1,6 @@
 # Summary
 
-Docker image for creating or renewing certificates and uploading them to AWS Certtificate Manager (ACM). Supports only GoDaddy domains.
+Docker image for creating or renewing certificates and uploading them to AWS Certificate Manager (ACM). Supports only GoDaddy domains.
 
 Based on [acme.sh](https://github.com/acmesh-official/acme.sh)
 
@@ -14,10 +14,11 @@ Based on [acme.sh](https://github.com/acmesh-official/acme.sh)
 | AWS_ACCESS_KEY_ID | AWS access key id | xxx |
 | AWS_SECRET_ACCESS_KEY | AWS secret access key | yyy |
 | AWS_REGION | AWS region | eu-west-1 |
-| CERTIFICATE_ARN | ARN of existing certificate. If present the (renewed) certificate is reimported into ACM, otherwise a new certificate record is imported into ACM |
+| CERTIFICATE_ARN | Semicolon separated list of ARNs of existing certificate. If present the (renewed) certificate is reimported into ACM, otherwise a new certificate record is imported into ACM |
 | KEY_LENGTH | Key length. Acme.sh "-k" parameter | 2048 |
 | ACCOUNT_KEY_LENGTH | Account key length. Acme.sh "-ak" parameter | 2048 |
 | SERVER | acme.sh [server](https://github.com/acmesh-official/acme.sh/wiki/Server) | letsencrypt |
+| ECS | Flag indicating that the container runs inside AWS ECS | "true" |
 
 # Building with Docker
 
